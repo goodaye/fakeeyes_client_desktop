@@ -3,7 +3,7 @@ package response
 import (
 	"time"
 
-	"github.com/goodaye/fakeeyes/protos/db"
+	"fakeeyes_client/protos/db"
 )
 
 // ReturnMessage  Http API return data
