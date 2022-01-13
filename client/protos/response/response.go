@@ -1,7 +1,6 @@
 package response
 
 import (
-	"fakeeyes_client/client/protos/db"
 	"time"
 )
 
@@ -24,7 +23,8 @@ type PageResponse struct {
 }
 
 type UserLogin struct {
-	db.User
+	Name       string    `json:"name" xorm:"not null unique VARCHAR(255) comment('用户名')"`
+	LastLogin  time.Time `json:"last_login" xorm:"not null default CURRENT_TIMESTAMP TIMESTAMP" `
 	Token      string    `json:"token"`
 	ExpireTime time.Time `json:"expire_time"`
 }

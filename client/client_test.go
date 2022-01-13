@@ -26,8 +26,22 @@ func TestUserSignUp(t *testing.T) {
 	}
 	resp, err := client.SignUp(req)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
 	fmt.Println(resp)
 
+}
+
+func TestUserSignIn(t *testing.T) {
+	name := "testuser"
+	req := request.UserSignIn{
+		Name: name,
+	}
+	resp, err := client.SignIn(req)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(resp)
 }
