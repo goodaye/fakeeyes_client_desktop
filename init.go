@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fakeeyes_client/client"
 	"fakeeyes_client/config"
 
+	client "github.com/goodaye/fakeeyes_client_golang"
 	"github.com/goodaye/wire"
 )
 

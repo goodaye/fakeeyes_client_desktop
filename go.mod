@@ -12,6 +12,7 @@ require (
 )
 
 require (
+	github.com/goodaye/fakeeyes_client_golang v0.0.1 // indirect
 	github.com/jonboulle/clockwork v0.2.2 // indirect
 	github.com/judwhite/go-svc v1.2.1 // indirect
 	github.com/lestrrat-go/strftime v1.0.5 // indirect

@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fakeeyes_client/client/protos/request"
 	"fakeeyes_client/config"
 	"flag"
 	"fmt"
 	"os"
 
+	"github.com/goodaye/fakeeyes_client_golang/protos/request"
 	"github.com/goodaye/wire"
 )
 
