@@ -17,6 +17,10 @@ func TestRegister(t *testing.T) {
 		fmt.Println(err)
 		return
 	}
-	Register()
+	err = Register()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 }

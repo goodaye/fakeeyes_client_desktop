@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/goodaye/fakeeyes_client_golang/protos/request"
+	"github.com/goodaye/fakeeyes/protos/request"
 	"github.com/goodaye/wire"
 )
 
@@ -79,6 +79,19 @@ func Register() error {
 }
 
 func Start() error {
+	err := wire.Init()
+	if err != nil {
+		return err
+	}
+	user, err := fesclient.SignIn(request.UserSignIn{Name: config.GlobalConfig.Fakeeyes.Name})
+	if err != nil {
+		return err
+	}
 
-	return nil
+	conn, err := user.ConnectDevice("97b45f13-1606-4f63-88f3-a1d11fa6c94e")
+	if err != nil {
+		return err
+	}
+	err = MoveControll(conn)
+	return err
 }
